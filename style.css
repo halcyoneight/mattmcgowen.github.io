@@ -1,0 +1,625 @@
+/* ===== CSS Variables ===== */
+:root {
+  --bg-dark: #1a1a18;
+  --bg-darker: #141412;
+  --gold: #c9a227;
+  --gold-light: #d4b84a;
+  --gold-muted: #a08420;
+  --text-light: #e8e4dc;
+  --text-muted: #9a9590;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Montserrat', -apple-system, sans-serif;
+}
+
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+/* ===== Navigation ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: linear-gradient(to bottom, rgba(26, 26, 24, 0.95), transparent);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+}
+
+.logo-accent {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--text-light);
+}
+
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-icon {
+  color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--gold);
+}
+
+.nav-cta {
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: var(--gold);
+  color: var(--bg-dark);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg-dark);
+}
+
+.hero-content {
+  padding: 8rem 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  margin-bottom: 2rem;
+}
+
+.subtitle-icon {
+  font-size: 1.2rem;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 450px;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.hero-album {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  max-width: 350px;
+}
+
+.album-cover {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.album-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-darker);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.album-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+}
+
+.album-info .album-title {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.spotify-link {
+  color: var(--gold);
+  margin-top: 0.5rem;
+}
+
+.spotify-link:hover {
+  color: var(--gold-light);
+}
+
+.hero-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-darker) 0%, #2a2520 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ===== Bio Section ===== */
+.bio-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.bio-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.bio-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #2a2520 0%, var(--bg-darker) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.bio-content {
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-tag {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.tag-star {
+  margin-left: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.bio-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
+  max-width: 500px;
+}
+
+/* ===== Discography Section ===== */
+.discography-section {
+  padding: 8rem 4rem;
+  background: var(--bg-darker);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.section-icon {
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.discography-title {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+
+.album-list {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.album-item {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+}
+
+.album-name {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.album-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.album-links a {
+  color: var(--text-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.album-links a:hover {
+  color: var(--gold);
+}
+
+.track-list {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.track-list-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.tracks {
+  list-style-position: inside;
+  color: var(--text-muted);
+}
+
+.tracks li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.95rem;
+}
+
+/* ===== Listen Section ===== */
+.listen-section {
+  padding: 6rem 4rem;
+  background: linear-gradient(180deg, var(--bg-dark) 0%, #2a2520 50%, var(--bg-dark) 100%);
+}
+
+.listen-title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 0.2em;
+}
+
+.spotify-embed {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ===== Gallery Section ===== */
+.gallery-section {
+  padding: 2rem 0;
+  background: var(--bg-dark);
+}
+
+.gallery-header {
+  text-align: right;
+  padding: 4rem 4rem 2rem;
+}
+
+.gallery-title {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+
+.gallery-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.gallery-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.gallery-item.large {
+  grid-column: span 2;
+  aspect-ratio: 2/1;
+}
+
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2a2520 0%, var(--bg-darker) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover .gallery-placeholder {
+  background: linear-gradient(135deg, #3a3530 0%, #2a2520 100%);
+}
+
+/* ===== Contact Section ===== */
+.contact-section {
+  padding: 8rem 4rem;
+  text-align: center;
+  background: var(--bg-darker);
+}
+
+.contact-title {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.contact-text {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.8;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: var(--gold);
+  color: var(--bg-dark);
+}
+
+/* ===== Footer ===== */
+.footer {
+  padding: 3rem 4rem;
+  background: var(--bg-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    display: none;
+  }
+
+  .hero-content {
+    padding: 8rem 3rem 4rem;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .bio-section {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-image {
+    min-height: 50vh;
+  }
+
+  .bio-image-placeholder {
+    min-height: 50vh;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item.large {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-content {
+    padding: 7rem 1.5rem 3rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-album {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bio-content {
+    padding: 4rem 1.5rem;
+  }
+
+  .discography-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .discography-title {
+    font-size: 2.5rem;
+  }
+
+  .album-name {
+    font-size: 1.8rem;
+  }
+
+  .listen-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .gallery-header {
+    padding: 3rem 1.5rem 1rem;
+  }
+
+  .gallery-title {
+    font-size: 2.5rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .footer {
+    padding: 2rem 1.5rem;
+  }
+}
