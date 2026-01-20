@@ -120,6 +120,7 @@ a:hover {
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
+  margin-bottom: -1px;
 }
 
 .hero-bg {
