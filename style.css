@@ -20,6 +20,12 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #1a1a18;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -238,9 +244,10 @@ a:hover {
   min-height: 100vh;
   object-fit: cover;
   object-position: center;
-  margin: 0;
+  margin: -1px 0;
   padding: 0;
   border: none;
+  background-color: #1a1a18;
 }
 
 .bio-content {
