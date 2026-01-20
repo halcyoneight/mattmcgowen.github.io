@@ -24,6 +24,7 @@ html {
 
 img {
   display: block;
+  vertical-align: bottom;
 }
 
 body {
@@ -32,6 +33,10 @@ body {
   color: var(--text-light);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+section {
+  background-color: var(--bg-dark);
 }
 
 a {
@@ -120,7 +125,7 @@ a:hover {
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
-  margin-bottom: -1px;
+  border-bottom: 1px solid var(--bg-dark);
 }
 
 .hero-bg {
@@ -201,14 +206,16 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
-  margin-top: -1px;
   background-color: var(--bg-dark);
+  border-top: 1px solid var(--bg-dark);
+  border-bottom: 1px solid var(--bg-dark);
 }
 
 .bio-image {
   position: relative;
   overflow: hidden;
   line-height: 0;
+  font-size: 0;
 }
 
 .bio-image-placeholder {
