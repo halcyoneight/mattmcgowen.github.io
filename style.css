@@ -201,11 +201,14 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
+  margin-top: -1px;
+  background-color: var(--bg-dark);
 }
 
 .bio-image {
   position: relative;
   overflow: hidden;
+  line-height: 0;
 }
 
 .bio-image-placeholder {
